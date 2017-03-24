@@ -366,7 +366,8 @@
       
         
           
-            <p>&amp;nbsp最近在学nodejs下的express框架。Express中需要模板引擎来渲染模板文件，也就是我们平常说的html文件。<br>在express工程中默认是jade视图引擎，但我想用html来写我的视图文件，需要ejs模板引擎，那如何让两种模<br>板引擎共同存在。</p>
+            <pre><code>最近在学nodejs下的express框架。Express中需要模板引擎来渲染模板文件，也就是我们平常说的html文件。
+</code></pre><p>在express工程中默认是jade视图引擎，但我想用html来写我的视图文件，需要ejs模板引擎，那如何让两种模<br>板引擎共同存在。</p>
 <p>cmd安装nodejs模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install consolidate</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install express-hogan</div></pre></td></tr></table></figure>
 <p>在express的app.js中设置模板引擎<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> engines = <span class="built_in">require</span>(<span class="string">'consolidate'</span>);</div><div class="line"></div><div class="line">app.engine(<span class="string">'haml'</span>, engines.haml);</div><div class="line">app.engine(<span class="string">'html'</span>, engines.hogan);</div><div class="line"></div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);</div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'html'</span>);</div></pre></td></tr></table></figure></p>
