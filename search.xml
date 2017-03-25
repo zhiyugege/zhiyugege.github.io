@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[express下模板引擎共存]]></title>
+      <url>%2F2017%2F03%2F24%2Fwindows-nodejs-express%2F</url>
+      <content type="text"><![CDATA[最近在学nodejs下的express框架。Express中需要模板引擎来渲染模板文件，也就是我们平常说的html文件。在express工程中默认是jade视图引擎，但我想用html来写我的视图文件，需要ejs模板引擎，那如何让两种模板引擎共同存在。 cmd安装nodejs模块1npm install consolidate 1npm install express-hogan 在express的app.js中设置模板引擎1234567var engines = require('consolidate');app.engine('haml', engines.haml);app.engine('html', engines.hogan);app.set('view engine', 'jade');app.set('view engine', 'html'); 完成！]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello]]></title>
+      <url>%2F2017%2F03%2F24%2FHello%2F</url>
+      <content type="text"><![CDATA[我的新博客又诞生了，第一次用静态博客感觉不错，以后会update。关于作者:123456789var I = &#123;Name: 致宇哥哥,Age: 21,School: BUCT,Major: CS,Home: Zhejiang,Phone: 13011136566,Email: 857188491@qq.com&#125;]]></content>
+    </entry>
+
+    
+  
+  
+</search>
