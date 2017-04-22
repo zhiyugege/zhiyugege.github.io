@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Ajax实现图片上传]]></title>
+      <url>%2F2017%2F03%2F24%2Fimg-upload%2F</url>
+      <content type="text"><![CDATA[写项目的时候需要图片上传功能，这在web开发中也是比较普遍的功能。今天整理出一段时间关于图片上传的知识。一般上传图片的时候都需要图片预览，之后再提交，上传服务器。关于图片预览需要用到html5里的一些知识。 123&lt;!-- file类型的input，绑定uploadImg事件 --&gt;&lt;input type="file" name="上传图片" onchange="uploadImg(this)" &gt;&lt;img src="" id="img"&gt; 个人觉得ajax上传图片用户体验比较好，当然你也可以做成表单提交这里写了两个比较基本的判断，判断是否为图片格式和图片大小（最大为2M）。HTML5定义了FileReader作为文件API的重要成员用于读取文件，实现了图片预览。12345678910111213141516171819202122232425262728293031323334353637383940414243function uploadImg(source)&#123; var name = source.value; var file = source.files[0]; var fd = new FormData(); //正则判断上传文件格式 if(!/\.(gif|jpg|png|jpeg)$/.test(name))&#123; alert('上传的必须要是图片'); source.value=""; return ; &#125; //判断上传文件大小 if(file/1024&gt;2000)&#123; alert('上传的图片必须小于2m'); return ; &#125; //图片预览 if(window.FileReader)&#123; var reader = new FileReader(); reader.onloadend = function(e)&#123; $('#img').attr('src',e.target.result) &#125; reader.readAsDataURL(file); &#125;else&#123; alert('browser not support!'); return ; &#125; fd.append("upfile",file); //ajax upload $.ajax(&#123; url:url, type:'POST', data:fd, //阻止序列化操作 processData:false, contentType:false, success:function(res)&#123; console.log('ok'); &#125;, error:function(res)&#123; console.log('no'); &#125; &#125;);&#125; 关于后端语言和框架的使用就看个人喜好了。反正我用的是php。上面是一个简单的单个图片上传，可能之后有时间会去做一下多图片的和可拖拽的…]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[express下模板引擎共存]]></title>
       <url>%2F2017%2F03%2F24%2Fwindows-nodejs-express%2F</url>
       <content type="text"><![CDATA[最近在学nodejs下的express框架。Express中需要模板引擎来渲染模板文件，也就是我们平常说的html文件。在express工程中默认是jade视图引擎，但我想用html来写我的视图文件，需要ejs模板引擎，那如何让两种模板引擎共同存在。 cmd安装nodejs模块1npm install consolidate 1npm install express-hogan 在express的app.js中设置模板引擎1234567var engines = require('consolidate');app.engine('haml', engines.haml);app.engine('html', engines.hogan);app.set('view engine', 'jade');app.set('view engine', 'html'); 完成！]]></content>
