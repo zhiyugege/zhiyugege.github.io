@@ -99,7 +99,7 @@
 
 问题分析1.允许多个读进程进行读操作2.不允许读和写同时进行操作3.不允许多个读进程进行写操作读者和写者问题其实可以分为三种：读者优先 写者优先 公平竞争读者优先和公平竞争之间只差了一个信号量来对读写进程进行平等访问。读者优先可能造成写进程饿死，公平竞争的结果则是所有读进程结束后写进程才允许进行。而对与写者优先来说，读操作进行前需让出资源给写进程。
 代码">
-<meta property="og:updated_time" content="2017-05-03T15:33:49.100Z">
+<meta property="og:updated_time" content="2017-09-14T01:48:58.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程同步问题-读者写者">
 <meta name="twitter:description" content="操作系统进程同步问题第二弹：读者写者问题
@@ -539,7 +539,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

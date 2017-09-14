@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[爬虫-模拟登录-jwgl]]></title>
+      <url>http://yoursite.com/2017/09/14/jwgl-spider/</url>
+      <content type="html"><![CDATA[<p>这几天在写爬虫，爬学校教务网的课表信息，然后嵌进一个成员管理系统。<br>前后总共花了两三天的时间。大致摸清了教务网新系统的套路。</p>
+<hr>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>获取课表数据的时候，用户一定是在登录状态下，所以生爬课表那个页面的时候是获得不了数据的。<br>第一步就是要模拟用户在客户端登录。然后一顿看source后发现，教务网登录时首先会根据用户第一次登录<br>首页随机生成的那个<strong>session</strong>，向服务器请求获得对应的加密公钥，然后把密码在客户端加密后，带着<strong>session</strong><br>请求登录。登录成功后，就可以根据那个随机的<strong>sessioh</strong>和headers获得课表数据。之后动态数据加载，访问api这些就很简单。</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>这次用到的node包是 <strong>superagent</strong>，主要功能是模拟客户端请求。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install superagent -save</div></pre></td></tr></table></figure></p>
+<p>主要用法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> req = <span class="built_in">require</span>(<span class="string">'superagent'</span>);</div><div class="line"></div><div class="line"><span class="comment">//get session</span></div><div class="line">req</div><div class="line">.get(<span class="keyword">this</span>.main_url)   			<span class="comment">//首页url</span></div><div class="line">.end(<span class="function">(<span class="params">err, res</span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line">	<span class="keyword">let</span> public_key = &#123;&#125;;</div><div class="line">	<span class="keyword">let</span> session = res.headers[<span class="string">'set-cookie'</span>][<span class="number">0</span>].substr(<span class="number">0</span>, res.headers[<span class="string">'set-cookie'</span>][<span class="number">0</span>].indexOf(<span class="string">';'</span>));</div><div class="line">	<span class="keyword">this</span>.session = session;</div><div class="line"></div><div class="line">	&#125;)	</div><div class="line">	</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// simulate login</span></div><div class="line">req</div><div class="line">.post(<span class="keyword">this</span>.login_url)  			<span class="comment">//登录api</span></div><div class="line">.type(<span class="string">'form'</span>)</div><div class="line">.send(conf)   		   			<span class="comment">//登录信息</span></div><div class="line">.set(<span class="keyword">this</span>.login_headers)        <span class="comment">//设置访问头</span></div><div class="line">.set(&#123;<span class="string">'Cookie'</span>:session&#125;)</div><div class="line">.redirects(<span class="number">0</span>)</div><div class="line">.end(<span class="function">(<span class="params">err, res</span>) =&gt;</span> &#123;</div><div class="line">	</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> web </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[进程同步问题-医生看病问题]]></title>
       <url>http://yoursite.com/2017/05/06/process-doctors/</url>
       <content type="html"><![CDATA[<p>操作系统进程同步问题<strong>第五弹</strong>：医生看病问题</p>
