@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[VUE 组件小tips集结]]></title>
       <url>%2F2017%2F09%2F14%2Fvue-component%2F</url>
-      <content type="text"><![CDATA[这里是平时使用Vue.js的时候遇到的一些小问题，之后会有补充。 ##Ⅰ同级组件通信使用bus通信机制完成组件间通信 12345678910111213//组件中methods:&#123; page:function() &#123; bus.$emit('funcName', parameter) //开始通信 &#125;&#125;//同级组件created: function() &#123; bus.$on('funcName',function(parameter)&#123; //收到通信 ... &#125;)&#125; 未完待续…]]></content>
+      <content type="text"><![CDATA[这里是平时使用Vue.js的时候遇到的一些小问题，之后会有补充。 1.同级组件通信使用bus通信机制完成组件间通信 12345678910111213//组件中methods:&#123; page:function() &#123; bus.$emit('funcName', parameter) //开始通信 &#125;&#125;//同级组件created: function() &#123; bus.$on('funcName',function(parameter)&#123; //收到通信 ... &#125;)&#125; 未完待续…]]></content>
     </entry>
 
     
