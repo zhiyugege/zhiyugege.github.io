@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python," />
+  <meta name="keywords" content="c++," />
 
 
 
@@ -87,22 +87,19 @@
 
 
 
-<meta name="description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
+<meta name="description" content="编译原理作业：中缀表达式求值，写优雅的代码。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opencv 人脸检测">
-<meta property="og:url" content="http://yoursite.com/2017/09/25/opencv-face/index.html">
+<meta property="og:title" content="中缀表达式求值">
+<meta property="og:url" content="http://yoursite.com/2017/09/25/complier-work/index.html">
 <meta property="og:site_name" content="zhiyugege's 博客">
-<meta property="og:description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
-<meta property="og:updated_time" content="2017-09-25T11:40:58.999Z">
+<meta property="og:description" content="编译原理作业：中缀表达式求值，写优雅的代码。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293">
+<meta property="og:updated_time" content="2017-09-25T11:53:01.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="opencv 人脸检测">
-<meta name="twitter:description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
+<meta name="twitter:title" content="中缀表达式求值">
+<meta name="twitter:description" content="编译原理作业：中缀表达式求值，写优雅的代码。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/25/opencv-face/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/25/complier-work/"/>
 
 
 
 
 
-  <title> opencv 人脸检测 | zhiyugege's 博客 </title>
+  <title> 中缀表达式求值 | zhiyugege's 博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +306,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/opencv-face/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/complier-work/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiyugege">
@@ -330,7 +327,7 @@
             
             
               
-                opencv 人脸检测
+                中缀表达式求值
               
             
           </h1>
@@ -345,7 +342,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T19:37:27+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T19:53:11+08:00">
                 2017-09-25
               </time>
             
@@ -368,8 +365,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -403,14 +400,8 @@
       
 
       
-        <h2 id="opencv-定位人脸"><a href="#opencv-定位人脸" class="headerlink" title="opencv 定位人脸"></a>opencv 定位人脸</h2><hr>
-<p>主要的python库 <strong>PIL</strong> 、<strong>cv2</strong> 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以<strong>xml</strong>的文件格式存储。在人脸定位的时候需要调用对应的<strong>xx.xml</strong>。</p>
-<h3 id="1-获取目标图片并检测人脸位置"><a href="#1-获取目标图片并检测人脸位置" class="headerlink" title="1.获取目标图片并检测人脸位置"></a>1.获取目标图片并检测人脸位置</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectFace</span><span class="params">(image_name, xml_url)</span>:</span></div><div class="line">	</div><div class="line">	img = cv2.imread(image_name)</div><div class="line">	face_cascade = cv2.CascadeClassifier(xml_url)</div><div class="line"></div><div class="line">	<span class="comment"># if img.nidm == 3:</span></div><div class="line">	grayImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</div><div class="line">	<span class="comment"># else: </span></div><div class="line">	<span class="comment"># 	grayImg= img</span></div><div class="line"></div><div class="line">	faces = face_cascade.detectMultiScale(grayImg, <span class="number">1.3</span>, <span class="number">5</span>)</div><div class="line">	result = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (x, y, width, height) <span class="keyword">in</span> faces:</div><div class="line">		result.append((x, y, x+width, y+height))</div><div class="line"></div><div class="line">	<span class="keyword">return</span> result</div></pre></td></tr></table></figure>
-<p><strong>CascadeClassifier()</strong>函数导入前面需要的xml文件。</p>
-<p><strong>cvtColor()</strong>函数降低图片颜色维度。</p>
-<p><strong>detectMultiScale()</strong>函数参数人脸识别精度，1.2-5范围。</p>
-<h3 id="2-截取人脸并保存"><a href="#2-截取人脸并保存" class="headerlink" title="2.截取人脸并保存"></a>2.截取人脸并保存</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveFaces</span><span class="params">(image_name, xml_url)</span>:</span></div><div class="line"></div><div class="line">	faces = selectFace(image_name, xml_url)</div><div class="line"></div><div class="line">	<span class="keyword">if</span> faces:</div><div class="line"></div><div class="line">		save_dir = image_name.split(<span class="string">'.'</span>)[<span class="number">0</span>] + <span class="string">"_faces"</span></div><div class="line">		os.mkdir(save_dir)</div><div class="line">		count = <span class="number">0</span></div><div class="line"></div><div class="line">		<span class="keyword">for</span> (x1, y1, x2, y2) <span class="keyword">in</span> faces:</div><div class="line">			file_name = os.path.join(save_dir, str(count)+<span class="string">".jpg"</span>)</div><div class="line">			Image.open(image_name).crop((x1, y1, x2, y2)).save(file_name)</div><div class="line">			count += <span class="number">1</span></div><div class="line">	<span class="keyword">else</span>:</div><div class="line">		print(<span class="string">"get error"</span>)</div></pre></td></tr></table></figure>
-<p>这里是以原图片文件名创建文件夹，文件夹内以识别到的人脸编号保存人脸图片。</p>
+        <p>编译原理作业：中缀表达式求值，写优雅的代码。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> BiTreeNode &#123;</div><div class="line"></div><div class="line">    <span class="keyword">char</span> key;</div><div class="line">    <span class="keyword">struct</span> BiTreeNode *leftNode;</div><div class="line">    <span class="keyword">struct</span> BiTreeNode *rightNode;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"><span class="comment">//BiTree</span></div><div class="line"><span class="keyword">class</span> BiTree &#123;</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line"></div><div class="line">    BiTreeNode *RootNode;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Before_Visit</span><span class="params">(BiTreeNode *Node)</span></span>;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> BiTree::Before_Visit(BiTreeNode *Node) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> leftCount, rightCount;</div><div class="line">    BiTreeNode *p = Node;</div><div class="line">    <span class="keyword">if</span>(p-&gt;leftNode==<span class="literal">NULL</span> &amp;&amp; p-&gt;rightNode==<span class="literal">NULL</span>) <span class="keyword">return</span> (p-&gt;key) - <span class="string">'0'</span>;</div><div class="line">    <span class="keyword">if</span>(p-&gt;leftNode != <span class="literal">NULL</span>)</div><div class="line">        leftCount = Before_Visit(p-&gt;leftNode);</div><div class="line">    <span class="keyword">if</span>(p-&gt;rightNode != <span class="literal">NULL</span>)</div><div class="line">        rightCount = Before_Visit(p-&gt;rightNode);</div><div class="line">    <span class="keyword">if</span>(p-&gt;key==<span class="string">'+'</span>) <span class="keyword">return</span> leftCount + rightCount;</div><div class="line">    <span class="keyword">if</span>(p-&gt;key==<span class="string">'-'</span>) <span class="keyword">return</span> leftCount - rightCount;</div><div class="line">    <span class="keyword">if</span>(p-&gt;key==<span class="string">'*'</span>) <span class="keyword">return</span> leftCount * rightCount;</div><div class="line">    <span class="keyword">if</span>(p-&gt;key==<span class="string">'/'</span>) <span class="keyword">return</span> leftCount / rightCount;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//Calculator private extends BiTree</span></div><div class="line"><span class="keyword">class</span> Calculator : <span class="keyword">private</span> BiTree</div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="keyword">private</span> :</div><div class="line"></div><div class="line">    <span class="built_in">string</span> expression;</div><div class="line"></div><div class="line"><span class="keyword">public</span> :</div><div class="line"></div><div class="line">    <span class="keyword">void</span> _constructor();</div><div class="line">    <span class="function">BiTreeNode * <span class="title">main_cal</span><span class="params">(<span class="keyword">int</span> ex_start,<span class="keyword">int</span> ex_end)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get_tag</span><span class="params">(<span class="keyword">int</span> ex_start, <span class="keyword">int</span> ex_end)</span></span>;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">void</span> Calculator::_constructor()&#123;</div><div class="line"></div><div class="line">    <span class="built_in">string</span> input;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"please input expression string:"</span>  &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; input;</div><div class="line">    expression = input;</div><div class="line">    <span class="keyword">int</span> ex_length = input.length();</div><div class="line"></div><div class="line">    RootNode = main_cal(<span class="number">0</span>, ex_length<span class="number">-1</span>);</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; Before_Visit(RootNode);</div><div class="line">&#125;</div><div class="line"><span class="comment">//build BiTree</span></div><div class="line">BiTreeNode *Calculator::main_cal(<span class="keyword">int</span> ex_start,<span class="keyword">int</span> ex_end) &#123;</div><div class="line"></div><div class="line">    BiTreeNode *p = <span class="keyword">new</span> BiTreeNode;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(ex_start == ex_end) &#123;</div><div class="line"></div><div class="line">        p-&gt;key = expression[ex_start];</div><div class="line">        p-&gt;leftNode = <span class="literal">NULL</span>;</div><div class="line">        p-&gt;rightNode = <span class="literal">NULL</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(expression[ex_start]==<span class="string">'('</span> &amp;&amp; expression[ex_end]==<span class="string">')'</span>) &#123;</div><div class="line"></div><div class="line">            ex_start += <span class="number">1</span>;</div><div class="line">            ex_end -= <span class="number">1</span>;</div><div class="line">        &#125; get_tag(ex_start, ex_end);</div><div class="line"></div><div class="line">        p-&gt;key = expression[index];</div><div class="line">        p-&gt;leftNode = main_cal(ex_start, index<span class="number">-1</span>);</div><div class="line">        p-&gt;rightNode = main_cal(index+<span class="number">1</span>, ex_end);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line"><span class="comment">//find every root node key</span></div><div class="line"><span class="keyword">int</span> Calculator::get_tag(<span class="keyword">int</span> ex_start, <span class="keyword">int</span> ex_end) &#123;</div><div class="line"></div><div class="line">    <span class="built_in">string</span> input = expression;</div><div class="line">    <span class="keyword">int</span> brackets_exit = <span class="number">0</span>,</div><div class="line">        plus_minus_exit = <span class="number">0</span>,</div><div class="line">        tag;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=ex_start; i&lt;ex_end; i++) &#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>((input[i]==<span class="string">'+'</span>|| input[i]==<span class="string">'-'</span>) &amp;&amp; brackets_exit==<span class="number">0</span>) &#123;</div><div class="line"></div><div class="line">            plus_minus_exit = <span class="number">1</span>;</div><div class="line">            tag = i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> ((input[i]==<span class="string">'*'</span> || input[i]==<span class="string">'/'</span>) &amp;&amp; plus_minus_exit==<span class="number">0</span> &amp;&amp; brackets_exit==<span class="number">0</span>) &#123;</div><div class="line"></div><div class="line">            tag = i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(input[i]==<span class="string">'('</span>) brackets_exit++;</div><div class="line">        <span class="keyword">if</span>(input[i]==<span class="string">')'</span>) brackets_exit--;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> tag;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">    Calculator CAL;</div><div class="line">    CAL._constructor();</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>END</strong></p>
 
       
@@ -441,7 +432,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/c/" rel="tag"># c++</a>
           
         </div>
       
@@ -454,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/14/vue-component/" rel="next" title="VUE 组件小tips集结">
-                <i class="fa fa-chevron-left"></i> VUE 组件小tips集结
+              <a href="/2017/09/25/opencv-face/" rel="next" title="opencv 人脸检测">
+                <i class="fa fa-chevron-left"></i> opencv 人脸检测
               </a>
             
           </div>
@@ -463,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/25/complier-work/" rel="prev" title="中缀表达式求值">
-                中缀表达式求值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,17 +500,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://onb7b05f6.bkt.clouddn.com/avatar.JPG"
@@ -603,22 +581,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#opencv-定位人脸"><span class="nav-number">1.</span> <span class="nav-text">opencv 定位人脸</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-获取目标图片并检测人脸位置"><span class="nav-number">1.1.</span> <span class="nav-text">1.获取目标图片并检测人脸位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-截取人脸并保存"><span class="nav-number">1.2.</span> <span class="nav-text">2.截取人脸并保存</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
