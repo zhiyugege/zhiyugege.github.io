@@ -88,21 +88,18 @@
 
 
 <meta name="description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
+主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="opencv 人脸检测">
 <meta property="og:url" content="http://yoursite.com/2017/09/25/opencv-face/index.html">
 <meta property="og:site_name" content="zhiyugege's 博客">
 <meta property="og:description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
-<meta property="og:updated_time" content="2017-09-25T11:40:58.999Z">
+主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。">
+<meta property="og:updated_time" content="2017-09-25T12:07:10.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="opencv 人脸检测">
 <meta name="twitter:description" content="opencv 定位人脸
-主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。
-1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url):		img = cv2.imread(imag">
+主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。">
 
 
 
@@ -404,7 +401,7 @@
 
       
         <h2 id="opencv-定位人脸"><a href="#opencv-定位人脸" class="headerlink" title="opencv 定位人脸"></a>opencv 定位人脸</h2><hr>
-<p>主要的python库 <strong>PIL</strong> 、<strong>cv2</strong> 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以<strong>xml</strong>的文件格式存储。在人脸定位的时候需要调用对应的<strong>xx.xml</strong>。</p>
+<p>主要的python库 <strong>PIL</strong> 、<strong>cv2</strong> 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以<strong>xml</strong>的文件格式存储。在人脸定位的时候需要调用对应的<strong>xx.xml</strong>。<br><a id="more"></a></p>
 <h3 id="1-获取目标图片并检测人脸位置"><a href="#1-获取目标图片并检测人脸位置" class="headerlink" title="1.获取目标图片并检测人脸位置"></a>1.获取目标图片并检测人脸位置</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectFace</span><span class="params">(image_name, xml_url)</span>:</span></div><div class="line">	</div><div class="line">	img = cv2.imread(image_name)</div><div class="line">	face_cascade = cv2.CascadeClassifier(xml_url)</div><div class="line"></div><div class="line">	<span class="comment"># if img.nidm == 3:</span></div><div class="line">	grayImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</div><div class="line">	<span class="comment"># else: </span></div><div class="line">	<span class="comment"># 	grayImg= img</span></div><div class="line"></div><div class="line">	faces = face_cascade.detectMultiScale(grayImg, <span class="number">1.3</span>, <span class="number">5</span>)</div><div class="line">	result = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (x, y, width, height) <span class="keyword">in</span> faces:</div><div class="line">		result.append((x, y, x+width, y+height))</div><div class="line"></div><div class="line">	<span class="keyword">return</span> result</div></pre></td></tr></table></figure>
 <p><strong>CascadeClassifier()</strong>函数导入前面需要的xml文件。</p>
 <p><strong>cvtColor()</strong>函数降低图片颜色维度。</p>
