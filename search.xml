@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[ubuntu 下安装 Anaconda 和 Jupyter notebook]]></title>
+      <url>%2F2017%2F12%2F02%2Fanaconda-jupyter%2F</url>
+      <content type="text"><![CDATA[1. 安装Anaconda安装方式很简单，源文件可以上官网上下载，但是太慢了，这里推荐清华的镜像站 1wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.0.1-Linux-x86_64.sh 下载完成以后 1bash Anaconda3-5.0.1-Linux-x86_64.sh 然后一路回车或者yes, 安装目录就按默认的就可以，安装完以后重新打开终端，看python版本，如果还是系统默认的 1source ~/.bashrc 更新之后就可以了。 2. 安装Jupyter notebook用pip安装就行了 1pip install jupyter 安装完成之后 1jupyter notebook 这时候可能会报错 1[C 15:03:06.778 NotebookApp] Running as root is not recommended. Use --allow-root to bypass. 解决方案 : 1jupyter notebook --generate-config --allow-root 1ipython 然后会提示让你输入 12345In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: Verify password: Out[2]: &apos;××××××××××××××××××××××××××××××××××××××&apos; #这个之后会用到 修改第一步创建的配置文件 1vim /root/.jupyter/jupyter_notebook_config.py 修改以下几个地方 1234567#c.NotebookApp.allow_root = False 去掉注释，改为Truec.NotebookApp.allow_root = True #c.NotebookApp.notebook_dir = u&apos;&apos; 加入notebook上创建的文件保存的目录；事先自己创建c.NotebookApp.notebook_dir = u&apos;/opt/jupyter&apos; #c.NotebookApp.password = u&apos;&apos; #加入之前加密密码 Out[2]: &apos;××××××××××××××××××××××××××××××××××××××&apos;c.NotebookApp.password = u&apos;×××××××××××××××××××××××××××××××××××&apos; 保存后，重新jupyter notebook 就ok了。 ps. 本周把电脑重装了双系统，之前的环境有点乱。。。 欢迎指正！]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[opencv 人脸检测]]></title>
       <url>%2F2017%2F09%2F25%2Fopencv-face%2F</url>
       <content type="text"><![CDATA[最近在做一个人脸识别的签到系统，第一步在图片中检测人脸的位置，于是发现了opencv这样神奇又好用的东西，虽然准确率不是很高，但是就目前定位人脸的需求来看够用。 主要的python库 PIL 、cv2 。这里利用opencv已经训练好的模型进行人脸定位，在opencv中以xml的文件格式存储。在人脸定位的时候需要调用对应的xx.xml。 1.获取目标图片并检测人脸位置1234567891011121314151617def selectFace(image_name, xml_url): img = cv2.imread(image_name) face_cascade = cv2.CascadeClassifier(xml_url) # if img.nidm == 3: grayImg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # else: # grayImg= img faces = face_cascade.detectMultiScale(grayImg, 1.3, 5) result = [] for (x, y, width, height) in faces: result.append((x, y, x+width, y+height)) return result CascadeClassifier()函数导入前面需要的xml文件。 cvtColor()函数降低图片颜色维度。 detectMultiScale()函数参数人脸识别精度，1.2-5范围。 2.截取人脸并保存12345678910111213141516def saveFaces(image_name, xml_url): faces = selectFace(image_name, xml_url) if faces: save_dir = image_name.split('.')[0] + "_faces" os.mkdir(save_dir) count = 0 for (x1, y1, x2, y2) in faces: file_name = os.path.join(save_dir, str(count)+".jpg") Image.open(image_name).crop((x1, y1, x2, y2)).save(file_name) count += 1 else: print("get error") 这里是以原图片文件名创建文件夹，文件夹内以识别到的人脸编号保存人脸图片。 END]]></content>
